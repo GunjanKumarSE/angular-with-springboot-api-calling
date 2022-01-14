@@ -1,0 +1,147 @@
+<a class="" routerLink="/employees">Back</a>
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="currentEmployee" class="edit-form">
+      <h4>Employee</h4>
+      <form>
+        <div class="form-group">
+          <label for="id">Id</label>
+          <input
+            type="text"
+            class="form-control"
+            id="id"
+            [(ngModel)]="currentEmployee.id"
+            name="id"
+          />
+        </div>
+        <div class="form-group">
+          <label for="id">FirstName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            [(ngModel)]="currentEmployee.firstName"
+            name="firstName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">LastName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            [(ngModel)]="currentEmployee.lastName"
+            name="lastName"
+          />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input
+            class="form-control"
+            id="address"
+            required
+            [(ngModel)]="currentEmployee.address"
+            name="address"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="pinCode">Pin Code </label>
+          <input
+            class="form-control"
+            id="pinCode"
+            required
+            [(ngModel)]="currentEmployee.pinCode"
+            name="pinCode"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            class="form-control"
+            id="email"
+            required
+            [(ngModel)]="currentEmployee.email"
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <input
+            class="form-control"
+            id="gender"
+            required
+            [(ngModel)]="currentEmployee.gender"
+            name="gender"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="married">Married</label>
+          <input
+            class="form-control"
+            id="married"
+            required
+            [(ngModel)]="currentEmployee.married"
+            name="married"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="birthday">Birthday</label>
+          <input type="text"
+            class="form-control"
+            id="birthday"
+            required
+            [(ngModel)]="currentEmployee.birthday"
+            name="birthday"
+          />
+        </div>
+        <div class="form-group">
+          <label for="profession">Profession</label>
+          <input
+            class="form-control"
+            id="profession"
+            required
+            [(ngModel)]="currentEmployee.profession"
+            name="profession"
+          />
+        </div>
+        <div class="form-group">
+          <label for="dateofjoining | date">Date of Joining</label>
+          <input type="text"
+            class="form-control"
+            id="dateofjoining"
+            required
+            [(ngModel)]="currentEmployee.dateofjoining"
+            name="dateofjoining"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="number"
+            class="form-control"
+            id="salary"
+            required
+            [(ngModel)]="currentEmployee.salary"
+            name="salary"
+          />
+        </div>
+      </form>
+
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="update()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentEmployee">
+      <br />
+      <p>Cannot access this Employee...</p>
+    </div>
+  </div>
